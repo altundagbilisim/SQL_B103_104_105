@@ -5,20 +5,20 @@ create database erol;
 
 --DDL - DATA DEFINITION LANG.
 --CREATE - TABLO OLUSTURMA
-CREATE TABLE ogrenciler2
+CREATE TABLE ogrenciler5
 (
-ogrenci_no char(7),
-isim varchar(20),
+ogrenci_no char(7),     --Uzunluğunu bildiğimiz stringler için CHAR kullanılır.
+isim varchar(20),       --Uzunluğunu bilmediğimiz stringler için VARCHAR kullanılır.
 soyisim varchar(25),
-not_ort real,   --ondalıklı sayılar için kullanılır(double gibi)
+not_ort real,           --Ondalıklı sayılar için kullanılır(double gibi)
 kayit_tarih date
 );
 
 --VAROLAN TABLODAN YENİ BİR TABLO OLUŞTURMA
-CREATE TABLE ogrenci_notlari
-AS --Benzer tablodaki başlıklarla ve data tipleriyle yeni bir tablo oluşturmak için 
-   --normal tablo oluştururken ki parantezler yerine AS kullanıp SELECT komutuyla almak istediğimiz verielri alırız.
-SELECT isim,soyisim,not_ort FROM ogrenciler2;
+CREATE TABLE ogrenci_notlari1
+AS           /*Benzer tablodaki başlıklarla ve data tipleriyle yeni bir tablo oluşturmak için 
+               normal tablo oluştururken ki parantezler yerine AS kullanıp SELECT komutuyla almak istediğimiz verielri alırız.*/
+SELECT isim,soyisim,not_ort FROM ogrenciler5;
 
 -- DML - DATA MANUPULATION LANG.
 -- INSERT (Database'e veri ekleme)
